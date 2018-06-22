@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+<style>
+#color-picker {
+position: fixed;
+top: -1000px;
+left: 0px;
+background: white;
+max-width: 210px;
+border: solid 1px #dedede;
+}
+#color-picker button, #color-picker span {
+width: 20px;
+height: 20px;
+cursor: pointer;
+margin: 5px;
+background-color: #ffffff;
+border: solid 1px #dedede;
+display: inline-block;
+outline: none;
+}
+#color-picker :focus {
+border-color: #0088ff;
+}
+#color-picker hr {
+border-top: solid 1px #dedede;
+margin: 0px
+}
+#color {
+border: solid 1px #dedede;
+margin: 5px;
+width: 136px;
+height: 18px;
+letter-spacing: 2px;
+}
+#color-picker p {
+margin: 0px;
+}
+#color-picker p * {
+vertical-align: top;
+}
+#color-menu {
+padding: 0;
+color: #aaaaaa
+}
+</style>
+<h3>A demonstration of how to access a Color picker</h3>
+
+Select your favorite color: <input type="color" id="myColor" onclick="pick(event)"><br>
+Select your least favorite color: <input type="color" id="myColor" onclick="pick(event)"><br>
+Select a random color: <input type="color" id="myColor" onclick="pick(event)"><br><br><br><br><br><br><br>
+Select your favorite color: <input type="color" id="myColor" onclick="pick(event)"><br>
+
+<div id="color-picker"><button style="background-color: #ffffff"></button><button style="background-color: #ff0000"></button><button style="background-color: #00ff00"></button><button style="background-color: #0000ff"></button><button style="background-color: #ffff00"></button><button style="background-color: #ff00ff"></button><button style="background-color: #00ffff"></button><button style="background-color: #ff8800"></button><button style="background-color: #000000"></button><button style="background-color: #dedede"></button><button style="background-color: #888888"></button><button style="background-color: #0088ff"></button><button style="background-color: #ffffff"></button><button style="background-color: #ff0000"></button><button style="background-color: #00ff00"></button><button style="background-color: #0000ff"></button><button style="background-color: #ffff00"></button><button style="background-color: #ff00ff"></button><button style="background-color: #00ffff"></button><button style="background-color: #ff8800"></button><button style="background-color: #000000"></button><button style="background-color: #dedede"></button><button style="background-color: #888888"></button><button style="background-color: #0088ff"></button><button style="background-color: #ffffff"></button><button style="background-color: #ff0000"></button><button style="background-color: #00ff00"></button><button style="background-color: #0000ff"></button><button style="background-color: #ffff00"></button><button style="background-color: #ff00ff"></button><button style="background-color: #00ffff"></button><button style="background-color: #ff8800"></button><button style="background-color: #000000"></button><button style="background-color: #dedede"></button><button style="background-color: #888888"></button>
+
+<hr><button style="background-color: #ff00ff"></button><button style="background-color: #00ffff"></button><hr>
+<p><span style="background-color: #ffffff"></span><input type="text" id="color" value="#ffffff"><label for="system-picker" id="color-label"><button id="color-menu">☰</button></label></p>
+<input type="color" id="system-picker"></div>
+
+<script>
+function pick(e){
+if(e.target.id === "system-picker" || e.target.id === "color-menu" || e.target.id === "color-label"){return;};
+e.preventDefault();
+var picker = document.getElementById("color-picker");
+var pos = e.target.getBoundingClientRect();
+picker.style.top = pos.top + "px";
+if(pos.height){picker.style.top = (pos.top + pos.height + 5) + "px";};
+picker.style.left = pos.left + "px";
+
+}
+</script>
+
+</body>
+</html>
