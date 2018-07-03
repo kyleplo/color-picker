@@ -107,7 +107,8 @@ margin: 0px;
 }
 #color-picker p * {
 vertical-align: top;
-}
+}
+
 .color-picker-button {
 width: 93px!important;
 color: ${ colorPickerOptions.theme.text }
@@ -142,7 +143,7 @@ picker.id = "color-picker";
 picker.innerHTML = colorPickerCode;
 document.body.append(picker);
 // Add color picker event listeners
-document.getElementById("color-picker-ok").addEventListener("click",function (){if(colorPickerRecent.indexOf(colorPickerState.value) < 0){colorPickerRecent.unshift(e.target.value)};hideColorPicker(true)});
+document.getElementById("color-picker-ok").addEventListener("click",function (e){if(colorPickerRecent.indexOf(colorPickerState.value) < 0){colorPickerRecent.unshift(e.target.value)};hideColorPicker(true)});
 document.getElementById("color-picker-close").addEventListener("click",function (){hideColorPicker(false)});
 document.getElementById("color-picker-selected").addEventListener("click",function (){if(colorPickerOptions.autoclose){hideColorPicker(true)}});
 document.getElementById("color").addEventListener("keyup",function (e){
